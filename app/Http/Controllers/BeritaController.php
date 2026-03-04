@@ -18,5 +18,11 @@ class BeritaController extends Controller
         return view('berita.berita', compact('beritas'));
     }
 
-    
+    public function detail($slug)
+    {
+        $berita = Berita::where('slug', $slug)->firstOrFail();
+        $beritas = $this->getLatestNews(); 
+
+        return view('berita.detail', compact('berita', 'beritas'));
+    }
 }

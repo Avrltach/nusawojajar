@@ -33,7 +33,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
         <div class="lg:col-span-1">

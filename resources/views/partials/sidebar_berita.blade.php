@@ -3,7 +3,7 @@
     
     <div class="space-y-4">
         @foreach($beritas as $berita)
-        <a href="#" class="block group">
+        <a href="{{ route('berita.detail', $berita->slug) }}" class="block group">
             <div class="flex flex-col">
                 <span class="text-xs font-semibold text-green-600 uppercase tracking-wider mb-1">
                     {{ $berita->category ?? 'Umum' }}

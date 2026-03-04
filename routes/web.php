@@ -29,6 +29,8 @@ Route::prefix('banom')->name('banom.')->group(function () {
 
 Route::get('/kegiatan', [KegiatanController::class, 'kegiatan'])->name('kegiatan');
 Route::get('/berita', [BeritaController::class, 'berita'])->name('berita');
+Route::get('/berita/{slug}', [BeritaController::class, 'detail'])
+    ->name('berita.detail');
 
 Route::prefix('galeri')->name('galeri.')->group(function () {    
     Route::get('/foto', [GaleriController::class, 'foto'])->name('foto');

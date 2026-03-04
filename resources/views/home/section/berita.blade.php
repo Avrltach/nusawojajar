@@ -92,7 +92,7 @@
                                         </span>
                                     </div>
                                     <h3 class="text-lg font-bold text-gray-800 mb-2 flex-grow">
-                                        <a href="{{ route('berita') }}${item.slug}" class="hover:text-green-600">
+                                        <a href="/berita/${item.slug}" class="hover:text-green-600">
                                             ${item.title}
                                         </a>
                                     </h3>
