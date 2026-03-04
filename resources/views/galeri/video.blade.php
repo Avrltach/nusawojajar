@@ -2,13 +2,9 @@
 
 @section('content')
 <div class="container mx-auto px-4 py-8">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
-        <!-- KOLOM KIRI: KONTEN UTAMA VIDEO -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">        
         <div class="lg:col-span-2">
-            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-                
-                <!-- Header Judul -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">                
                 <div class="mb-8">
                     <h2 class="text-xl md:text-2xl font-bold text-gray-800">
                         Galeri Video
@@ -19,10 +15,7 @@
                         <div class="h-2 w-10 bg-green-200"></div>
                     </div>
                 </div>
-
-                <!-- Grid Video -->
                 <div id="video-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Loading Skeleton -->
                     <div class="skeleton-item bg-white rounded-lg shadow-md overflow-hidden animate-pulse border">
                         <div class="bg-gray-300 h-48 w-full"></div>
                         <div class="p-5">
@@ -39,8 +32,6 @@
 
             </div>
         </div>
-
-        <!-- KOLOM KANAN: SIDEBAR BERITA -->
         <div class="lg:col-span-1">
             @include('partials.sidebar_berita', ['beritas' => $beritas])
         </div>
@@ -52,18 +43,14 @@
     document.addEventListener('DOMContentLoaded', function() {
         const container = document.getElementById('video-container');
         const apiUrl = '/api/videos';
-
         fetch(apiUrl)
             .then(response => response.json())
             .then(res => {
                 container.innerHTML = '';
                 const videoData = res.data; 
-
                 if (videoData && videoData.length > 0) {
                     videoData.forEach(item => {
-                        // Cek apakah URL video ada
                         if (!item.video_url) return;
-
                         const cardHTML = `
                             <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col h-full border border-gray-100 group">
                                 <div class="relative aspect-video bg-gray-900">

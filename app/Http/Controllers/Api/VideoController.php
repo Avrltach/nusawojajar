@@ -12,12 +12,11 @@ class VideoController extends Controller
     {
         $videos = Video::latest()->get();
 
-        // Mapping untuk memastikan URL yang dikirim ke frontend adalah URL publik
         $data = $videos->map(function ($video) {
             return [
                 'id' => $video->id,
                 'title' => $video->title,
-                'video_url' => $video->video_url, // Menggunakan accessor dari Model
+                'video_url' => $video->video_url,
             ];
         });
 

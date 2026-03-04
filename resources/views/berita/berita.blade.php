@@ -2,13 +2,9 @@
 
 @section('content')
 <div class="container mx-auto px-4 py-8">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
-        <!-- KOLOM KIRI: KONTEN UTAMA BERITA -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">        
         <div class="lg:col-span-2">
-            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-                
-                <!-- Header Judul -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">                
                 <div class="mb-8">
                     <h2 class="text-xl md:text-2xl font-bold text-gray-800">
                         Berita Terbaru
@@ -19,11 +15,7 @@
                         <div class="h-2 w-10 bg-green-200"></div>
                     </div>
                 </div>
-
-                <!-- Grid Berita -->
-                <!-- Ubah jadi 2 kolom agar proporsional di sidebar -->
                 <div id="berita-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Loading Skeleton -->
                     <div class="skeleton-item bg-white rounded-lg shadow-md overflow-hidden animate-pulse border">
                         <div class="bg-gray-300 h-48 w-full"></div>
                         <div class="p-5">
@@ -44,37 +36,28 @@
 
             </div>
         </div>
-
-        <!-- KOLOM KANAN: SIDEBAR -->
         <div class="lg:col-span-1">
             @include('partials.sidebar_berita', ['beritas' => $beritas])
         </div>
-
     </div>
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const container = document.getElementById('berita-container');
-        // Pastikan URL API benar
         const apiUrl = '/api/beritas';
 
         fetch(apiUrl)
             .then(response => response.json())
             .then(res => {
                 container.innerHTML = '';
-                // Sesuaikan dengan struktur API Anda (res.data.data untuk pagination)
                 const newsData = res.data.data || res.data; 
 
                 if (newsData && newsData.length > 0) {
-                    newsData.forEach(item => {
-                        
-                        // Format Tanggal
+                    newsData.forEach(item => {                        
                         const dateObj = new Date(item.published_at || item.created_at);
                         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
                         const formattedDate = dateObj.toLocaleDateString('id-ID', options);
-
-                        // Logika Badge Kategori
                         let badgeClass = '';
                         let badgeText = '';
                         
@@ -85,8 +68,6 @@
                             badgeClass = 'bg-green-600 text-white';
                             badgeText = 'Berita Umum';
                         }
-
-                        // Fallback Image
                         const imgUrl = item.image_url 
                             ? item.image_url 
                             : 'https://via.placeholder.com/400x200?text=No+Image';

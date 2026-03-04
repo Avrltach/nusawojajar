@@ -22,7 +22,6 @@ class BeritaController extends Controller
 
     public function show($slug)
     {
-        // Untuk halaman detail nanti
         $berita = Berita::where('slug', $slug)->first();
 
         if (!$berita) {

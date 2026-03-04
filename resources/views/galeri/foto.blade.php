@@ -2,13 +2,9 @@
 
 @section('content')
 <div class="container mx-auto px-4 py-8">
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        
-        <!-- KOLOM KIRI: KONTEN UTAMA FOTO -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">        
         <div class="lg:col-span-2">
-            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-                
-                <!-- Header Judul -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">                
                 <div class="mb-8">
                     <h2 class="text-xl md:text-2xl font-bold text-gray-800">
                         Galeri Foto
@@ -19,10 +15,7 @@
                         <div class="h-2 w-10 bg-green-200"></div>
                     </div>
                 </div>
-
-                <!-- Grid Foto -->
                 <div id="foto-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Loading Skeleton -->
                     <div class="skeleton-item bg-white rounded-lg shadow-md overflow-hidden animate-pulse border">
                         <div class="bg-gray-300 h-48 w-full"></div>
                         <div class="p-5">
@@ -41,8 +34,6 @@
 
             </div>
         </div>
-
-        <!-- KOLOM KANAN: SIDEBAR BERITA -->
         <div class="lg:col-span-1">
             @include('partials.sidebar_berita', ['beritas' => $beritas])
         </div>

@@ -74,11 +74,9 @@
         const buttons = document.querySelectorAll('.year-btn');
         buttons.forEach(btn => {
             if (btn.dataset.year == currentYear) {
-                // Jika aktif: Hijau solid
                 btn.classList.remove('bg-gray-200', 'text-gray-700');
                 btn.classList.add('bg-green-600', 'text-white');
             } else {
-                // Jika tidak aktif: Abu-abu
                 btn.classList.remove('bg-green-600', 'text-white');
                 btn.classList.add('bg-gray-200', 'text-gray-700');
             }

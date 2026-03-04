@@ -7,10 +7,9 @@ use Illuminate\Http\Request;
 
 class ProfilController extends Controller
 {
-    // Method untuk Sidebar Berita (digunakan bersama)
     private function getLatestNews()
     {
-        return Berita::latest()->take(5)->get(); // Ambil 5 berita terbaru
+        return Berita::latest()->take(5)->get(); 
     }
 
     public function strukturOrganisasi()
