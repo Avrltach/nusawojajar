@@ -21,7 +21,7 @@ class FotoResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedPhoto;
 
-    protected static ?string $recordTitleAttribute = 'caption'; // Ubah ke caption atau title jika ada
+    protected static ?string $recordTitleAttribute = 'caption'; 
 
     protected static UnitEnum|string|null $navigationGroup = 'Konten Website';
     protected static ?int $navigationSort = 2;

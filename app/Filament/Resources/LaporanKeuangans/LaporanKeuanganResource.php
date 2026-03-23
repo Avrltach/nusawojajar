@@ -19,13 +19,8 @@ use UnitEnum;
 class LaporanKeuanganResource extends Resource
 {
     protected static ?string $model = LaporanKeuangan::class;
-
-    // Ubah Ikon menjadi DocumentChartBar (Cocok untuk Laporan)
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedDocumentChartBar;
-
     protected static ?string $recordTitleAttribute = 'title';
-
-    // TAMBAHKAN INI: Pengaturan Navigasi
     protected static UnitEnum|string|null $navigationGroup = 'Transparansi';
     protected static ?int $navigationSort = 1;
     protected static ?string $navigationLabel = 'Laporan Keuangan';

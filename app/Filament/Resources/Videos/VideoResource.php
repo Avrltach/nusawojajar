@@ -19,13 +19,8 @@ use UnitEnum;
 class VideoResource extends Resource
 {
     protected static ?string $model = Video::class;
-
-    // Ubah Ikon menjadi Film
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedFilm;
-
     protected static ?string $recordTitleAttribute = 'title'; // Ubah ke title
-
-    // TAMBAHKAN INI: Pengaturan Navigasi
     protected static UnitEnum|string|null $navigationGroup = 'Konten Website';
     protected static ?int $navigationSort = 3;
     protected static ?string $navigationLabel = 'Galeri Video';
