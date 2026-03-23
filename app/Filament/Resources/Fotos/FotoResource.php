@@ -13,14 +13,19 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class FotoResource extends Resource
 {
     protected static ?string $model = Foto::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedPhoto;
 
-    protected static ?string $recordTitleAttribute = 'id';
+    protected static ?string $recordTitleAttribute = 'caption'; // Ubah ke caption atau title jika ada
+
+    protected static UnitEnum|string|null $navigationGroup = 'Konten Website';
+    protected static ?int $navigationSort = 2;
+    protected static ?string $navigationLabel = 'Galeri Foto';
 
     public static function form(Schema $schema): Schema
     {

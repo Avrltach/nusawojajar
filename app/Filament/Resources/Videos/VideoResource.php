@@ -13,14 +13,22 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
+
 
 class VideoResource extends Resource
 {
     protected static ?string $model = Video::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    // Ubah Ikon menjadi Film
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedFilm;
 
-    protected static ?string $recordTitleAttribute = 'id';
+    protected static ?string $recordTitleAttribute = 'title'; // Ubah ke title
+
+    // TAMBAHKAN INI: Pengaturan Navigasi
+    protected static UnitEnum|string|null $navigationGroup = 'Konten Website';
+    protected static ?int $navigationSort = 3;
+    protected static ?string $navigationLabel = 'Galeri Video';
 
     public static function form(Schema $schema): Schema
     {

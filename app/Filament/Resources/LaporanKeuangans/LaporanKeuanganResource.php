@@ -13,14 +13,22 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
+
 
 class LaporanKeuanganResource extends Resource
 {
     protected static ?string $model = LaporanKeuangan::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    // Ubah Ikon menjadi DocumentChartBar (Cocok untuk Laporan)
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedDocumentChartBar;
 
-    protected static ?string $recordTitleAttribute = 'id';
+    protected static ?string $recordTitleAttribute = 'title';
+
+    // TAMBAHKAN INI: Pengaturan Navigasi
+    protected static UnitEnum|string|null $navigationGroup = 'Transparansi';
+    protected static ?int $navigationSort = 1;
+    protected static ?string $navigationLabel = 'Laporan Keuangan';
 
     public static function form(Schema $schema): Schema
     {
