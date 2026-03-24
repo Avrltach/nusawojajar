@@ -1,6 +1,6 @@
 <header class="relative w-full h-screen md:h-[85vh] bg-gray-900 overflow-hidden flex items-center justify-center">    
     <div class="absolute inset-0 z-0">
-        <img src="{{ asset('resource/header.png') }}" 
+        <img src="{{ asset('resource/background.jpeg') }}" 
              alt="Background NU Sawojajar" 
              class="w-full h-full object-cover object-center opacity-50 grayscale">        
         <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent"></div>        
